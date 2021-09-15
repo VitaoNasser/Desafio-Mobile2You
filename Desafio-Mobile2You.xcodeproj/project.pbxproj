@@ -13,6 +13,7 @@
 		03683D8E26F183420042F55E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03683D8C26F183420042F55E /* Main.storyboard */; };
 		03683D9026F183430042F55E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03683D8F26F183430042F55E /* Assets.xcassets */; };
 		03683D9326F183430042F55E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03683D9126F183430042F55E /* LaunchScreen.storyboard */; };
+		35B7C6B2E8A0003D9EBB026A /* Pods_Desafio_Mobile2You.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECBD01F9F5483A88416D6C0 /* Pods_Desafio_Mobile2You.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		03683D8F26F183430042F55E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03683D9226F183430042F55E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03683D9426F183430042F55E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A1FCCE4AF9805C74D02D775 /* Pods-Desafio-Mobile2You.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio-Mobile2You.release.xcconfig"; path = "Target Support Files/Pods-Desafio-Mobile2You/Pods-Desafio-Mobile2You.release.xcconfig"; sourceTree = "<group>"; };
+		4ECBD01F9F5483A88416D6C0 /* Pods_Desafio_Mobile2You.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Desafio_Mobile2You.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5624DD32582BB26B7B4907E8 /* Pods-Desafio-Mobile2You.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio-Mobile2You.debug.xcconfig"; path = "Target Support Files/Pods-Desafio-Mobile2You/Pods-Desafio-Mobile2You.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35B7C6B2E8A0003D9EBB026A /* Pods_Desafio_Mobile2You.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				03683D8526F183420042F55E /* Desafio-Mobile2You */,
 				03683D8426F183420042F55E /* Products */,
+				CAE74C4AF202F7878A121B3F /* Pods */,
+				8FF2835C9528A0139C720B7C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = "Desafio-Mobile2You";
 			sourceTree = "<group>";
 		};
+		8FF2835C9528A0139C720B7C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4ECBD01F9F5483A88416D6C0 /* Pods_Desafio_Mobile2You.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CAE74C4AF202F7878A121B3F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5624DD32582BB26B7B4907E8 /* Pods-Desafio-Mobile2You.debug.xcconfig */,
+				2A1FCCE4AF9805C74D02D775 /* Pods-Desafio-Mobile2You.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03683D9726F183430042F55E /* Build configuration list for PBXNativeTarget "Desafio-Mobile2You" */;
 			buildPhases = (
+				5518F91E12FEB0FD256517D3 /* [CP] Check Pods Manifest.lock */,
 				03683D7F26F183420042F55E /* Sources */,
 				03683D8026F183420042F55E /* Frameworks */,
 				03683D8126F183420042F55E /* Resources */,
+				C1F7284F1C580B7C6A5322B9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5518F91E12FEB0FD256517D3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Desafio-Mobile2You-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1F7284F1C580B7C6A5322B9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Desafio-Mobile2You/Pods-Desafio-Mobile2You-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Desafio-Mobile2You/Pods-Desafio-Mobile2You-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Desafio-Mobile2You/Pods-Desafio-Mobile2You-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		03683D7F26F183420042F55E /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		03683D9826F183430042F55E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5624DD32582BB26B7B4907E8 /* Pods-Desafio-Mobile2You.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -301,6 +371,7 @@
 		};
 		03683D9926F183430042F55E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A1FCCE4AF9805C74D02D775 /* Pods-Desafio-Mobile2You.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
