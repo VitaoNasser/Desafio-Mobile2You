@@ -14,6 +14,7 @@
 		03683D9026F183430042F55E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03683D8F26F183430042F55E /* Assets.xcassets */; };
 		03683D9326F183430042F55E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03683D9126F183430042F55E /* LaunchScreen.storyboard */; };
 		03683D9F26F2EFA50042F55E /* StretchyHeaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03683D9E26F2EFA50042F55E /* StretchyHeaderController.swift */; };
+		03683DA626F389C30042F55E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03683DA526F389C30042F55E /* HeaderView.swift */; };
 		35B7C6B2E8A0003D9EBB026A /* Pods_Desafio_Mobile2You.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECBD01F9F5483A88416D6C0 /* Pods_Desafio_Mobile2You.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		03683D9226F183430042F55E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03683D9426F183430042F55E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03683D9E26F2EFA50042F55E /* StretchyHeaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderController.swift; sourceTree = "<group>"; };
+		03683DA526F389C30042F55E /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		2A1FCCE4AF9805C74D02D775 /* Pods-Desafio-Mobile2You.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio-Mobile2You.release.xcconfig"; path = "Target Support Files/Pods-Desafio-Mobile2You/Pods-Desafio-Mobile2You.release.xcconfig"; sourceTree = "<group>"; };
 		4ECBD01F9F5483A88416D6C0 /* Pods_Desafio_Mobile2You.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Desafio_Mobile2You.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5624DD32582BB26B7B4907E8 /* Pods-Desafio-Mobile2You.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio-Mobile2You.debug.xcconfig"; path = "Target Support Files/Pods-Desafio-Mobile2You/Pods-Desafio-Mobile2You.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				03683D9126F183430042F55E /* LaunchScreen.storyboard */,
 				03683D9426F183430042F55E /* Info.plist */,
 				03683D9E26F2EFA50042F55E /* StretchyHeaderController.swift */,
+				03683DA526F389C30042F55E /* HeaderView.swift */,
 			);
 			path = "Desafio-Mobile2You";
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03683DA626F389C30042F55E /* HeaderView.swift in Sources */,
 				03683D9F26F2EFA50042F55E /* StretchyHeaderController.swift in Sources */,
 				03683D8B26F183420042F55E /* ViewController.swift in Sources */,
 				03683D8726F183420042F55E /* AppDelegate.swift in Sources */,
