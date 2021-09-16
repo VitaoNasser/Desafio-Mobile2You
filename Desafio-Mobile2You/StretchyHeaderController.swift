@@ -26,8 +26,13 @@ class StretchyHeaderController: UICollectionViewController, UICollectionViewDele
         }
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return.lightContent
+    }
+    
     fileprivate func setupCollectionView() {
         collectionView.backgroundColor = .white
+        collectionView.contentInsetAdjustmentBehavior = .never
         
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         
