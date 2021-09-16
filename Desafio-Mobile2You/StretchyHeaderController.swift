@@ -12,16 +12,21 @@ fileprivate let headerId = "headerId"
 fileprivate let padding: CGFloat = 16
 
 class StretchyHeaderController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Custom code for our collection view
-        
-        //Layout customization
+
+        setupCollectionViewLayout()
+        setupCollectionView()
+    }
+    
+    fileprivate func setupCollectionViewLayout() {
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
             layout.sectionInset = .init(top: padding, left: padding, bottom: padding, right: padding)
         }
-        
+    }
+    
+    fileprivate func setupCollectionView() {
         collectionView.backgroundColor = .white
         
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
