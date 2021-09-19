@@ -32,8 +32,6 @@ class HeaderView: UICollectionReusableView {
         gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
         gradientLayer.locations = [0.5, 1]
         
-//        layer.addSublayer(gradientLayer)
-        
         let gradientContainerView = UIView()
         addSubview(gradientContainerView)
         gradientContainerView.anchor(top: nil, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor)
@@ -56,7 +54,7 @@ class HeaderView: UICollectionReusableView {
         imageViewTwoA.backgroundColor = .yellow
         
         let heavyLabelTwoA = UILabel()
-        heavyLabelTwoA.text = "100 Likes"
+        heavyLabelTwoA.text = "Likes"
         heavyLabelTwoA.font = .systemFont(ofSize: 12, weight: .regular)
         heavyLabelTwoA.textColor = .white
         

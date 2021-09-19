@@ -31,10 +31,10 @@ class StretchyHeaderController: UICollectionViewController, UICollectionViewDele
     }
     
     fileprivate func setupCollectionView() {
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .black
         collectionView.contentInsetAdjustmentBehavior = .never
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(MovieCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         
         collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
     }
@@ -53,8 +53,8 @@ class StretchyHeaderController: UICollectionViewController, UICollectionViewDele
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        cell.backgroundColor = .black
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MovieCollectionViewCell
+//        cell.backgroundColor = .black
         return cell
     }
     

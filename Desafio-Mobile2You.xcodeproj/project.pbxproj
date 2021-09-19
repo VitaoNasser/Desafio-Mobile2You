@@ -9,14 +9,13 @@
 /* Begin PBXBuildFile section */
 		03683D8726F183420042F55E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03683D8626F183420042F55E /* AppDelegate.swift */; };
 		03683D8926F183420042F55E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03683D8826F183420042F55E /* SceneDelegate.swift */; };
-		03683D8B26F183420042F55E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03683D8A26F183420042F55E /* ViewController.swift */; };
-		03683D8E26F183420042F55E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03683D8C26F183420042F55E /* Main.storyboard */; };
 		03683D9026F183430042F55E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03683D8F26F183430042F55E /* Assets.xcassets */; };
 		03683D9326F183430042F55E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03683D9126F183430042F55E /* LaunchScreen.storyboard */; };
 		03683D9F26F2EFA50042F55E /* StretchyHeaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03683D9E26F2EFA50042F55E /* StretchyHeaderController.swift */; };
 		03683DA626F389C30042F55E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03683DA526F389C30042F55E /* HeaderView.swift */; };
 		03683DA926F3B3900042F55E /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03683DA826F3B3900042F55E /* Extensions+UIView.swift */; };
 		03683DAD26F401560042F55E /* StretchyHeaderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03683DAC26F401560042F55E /* StretchyHeaderLayout.swift */; };
+		03683DBF26F6C7C10042F55E /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03683DBE26F6C7C10042F55E /* MovieCollectionViewCell.swift */; };
 		35B7C6B2E8A0003D9EBB026A /* Pods_Desafio_Mobile2You.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECBD01F9F5483A88416D6C0 /* Pods_Desafio_Mobile2You.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,8 +23,6 @@
 		03683D8326F183420042F55E /* Desafio-Mobile2You.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Desafio-Mobile2You.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03683D8626F183420042F55E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03683D8826F183420042F55E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		03683D8A26F183420042F55E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		03683D8D26F183420042F55E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03683D8F26F183430042F55E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03683D9226F183430042F55E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03683D9426F183430042F55E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -33,6 +30,7 @@
 		03683DA526F389C30042F55E /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		03683DA826F3B3900042F55E /* Extensions+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
 		03683DAC26F401560042F55E /* StretchyHeaderLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderLayout.swift; sourceTree = "<group>"; };
+		03683DBE26F6C7C10042F55E /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		2A1FCCE4AF9805C74D02D775 /* Pods-Desafio-Mobile2You.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio-Mobile2You.release.xcconfig"; path = "Target Support Files/Pods-Desafio-Mobile2You/Pods-Desafio-Mobile2You.release.xcconfig"; sourceTree = "<group>"; };
 		4ECBD01F9F5483A88416D6C0 /* Pods_Desafio_Mobile2You.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Desafio_Mobile2You.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5624DD32582BB26B7B4907E8 /* Pods-Desafio-Mobile2You.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio-Mobile2You.debug.xcconfig"; path = "Target Support Files/Pods-Desafio-Mobile2You/Pods-Desafio-Mobile2You.debug.xcconfig"; sourceTree = "<group>"; };
@@ -71,11 +69,10 @@
 		03683D8526F183420042F55E /* Desafio-Mobile2You */ = {
 			isa = PBXGroup;
 			children = (
+				03683DBD26F6C6F50042F55E /* Cell */,
 				03683DAB26F401070042F55E /* Custom */,
 				03683D8626F183420042F55E /* AppDelegate.swift */,
 				03683D8826F183420042F55E /* SceneDelegate.swift */,
-				03683D8A26F183420042F55E /* ViewController.swift */,
-				03683D8C26F183420042F55E /* Main.storyboard */,
 				03683D8F26F183430042F55E /* Assets.xcassets */,
 				03683D9126F183430042F55E /* LaunchScreen.storyboard */,
 				03683D9426F183430042F55E /* Info.plist */,
@@ -92,6 +89,14 @@
 				03683DAC26F401560042F55E /* StretchyHeaderLayout.swift */,
 			);
 			path = Custom;
+			sourceTree = "<group>";
+		};
+		03683DBD26F6C6F50042F55E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				03683DBE26F6C7C10042F55E /* MovieCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		8FF2835C9528A0139C720B7C /* Frameworks */ = {
@@ -172,7 +177,6 @@
 			files = (
 				03683D9326F183430042F55E /* LaunchScreen.storyboard in Resources */,
 				03683D9026F183430042F55E /* Assets.xcassets in Resources */,
-				03683D8E26F183420042F55E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +233,7 @@
 				03683D9F26F2EFA50042F55E /* StretchyHeaderController.swift in Sources */,
 				03683DA926F3B3900042F55E /* Extensions+UIView.swift in Sources */,
 				03683DAD26F401560042F55E /* StretchyHeaderLayout.swift in Sources */,
-				03683D8B26F183420042F55E /* ViewController.swift in Sources */,
+				03683DBF26F6C7C10042F55E /* MovieCollectionViewCell.swift in Sources */,
 				03683D8726F183420042F55E /* AppDelegate.swift in Sources */,
 				03683D8926F183420042F55E /* SceneDelegate.swift in Sources */,
 			);
@@ -238,14 +242,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		03683D8C26F183420042F55E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				03683D8D26F183420042F55E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		03683D9126F183430042F55E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
