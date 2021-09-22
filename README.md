@@ -5,7 +5,7 @@ Proposta do Desafio:
 
 Você deve replicar o layout da tela de detalhe dos filmes do app TodoMovies4.
 Se você reparar, a imagem do filme possui um efeito. Não é obrigatório implementar este efeito, mas se for feito nós ficaremos felizes.
-Nota: Efeito criado com sucesso =)
+\n Nota: Efeito criado com sucesso =)
 
 Requisitos:
 
