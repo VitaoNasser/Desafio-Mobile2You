@@ -6,15 +6,22 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HeaderView: UICollectionReusableView {
     
+    // MARK: - Properties
+    let titleLabel = UILabel()
+    
     let imageView: UIImageView = {
-        let iv = UIImageView(image: #imageLiteral(resourceName: "stretchy_header"))
+        let iv = UIImageView()
+        iv.backgroundColor = .black
         iv.contentMode = .scaleAspectFill
+        iv.clipsToBounds = true
         return iv
     }()
     
+    // MARK: - Inits
     override init(frame: CGRect) {
         super.init(frame: frame)
         //Custom code for layout
@@ -27,6 +34,11 @@ class HeaderView: UICollectionReusableView {
         setupGradientLayer()
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Private methods
     fileprivate func setupGradientLayer() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
@@ -41,37 +53,37 @@ class HeaderView: UICollectionReusableView {
         gradientLayer.frame = self.bounds
         gradientLayer.frame.origin.y -= bounds.height
         
-        let heavyLabelOne = UILabel()
-        heavyLabelOne.text = "Surf the web for courses"
-        heavyLabelOne.font = .systemFont(ofSize: 24, weight: .heavy)
-        heavyLabelOne.textColor = .white
+        titleLabel.font = .systemFont(ofSize: 24, weight: .heavy)
+        titleLabel.textColor = .white
         
-        let buttonOne = UIButton()
-        buttonOne.backgroundColor = .red
+        let likeButton = UIButton()
+        likeButton.setImage(#imageLiteral(resourceName: "big_like"), for: .normal)
 
-        let imageViewTwoA = UIImageView()
-        imageViewTwoA.widthAnchor.constraint(equalToConstant: 20).isActive = true
-        imageViewTwoA.backgroundColor = .yellow
+        let likesImage = UIImageView()
+        likesImage.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        likesImage.image = #imageLiteral(resourceName: "small_like")
         
-        let heavyLabelTwoA = UILabel()
-        heavyLabelTwoA.text = "Likes"
-        heavyLabelTwoA.font = .systemFont(ofSize: 12, weight: .regular)
-        heavyLabelTwoA.textColor = .white
         
-        let imageViewTwoB = UIImageView()
-        imageViewTwoB.backgroundColor = .blue
-        imageViewTwoB.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        let likesLabel = UILabel()
+        likesLabel.text = "Likes"
+        likesLabel.font = .systemFont(ofSize: 12, weight: .regular)
+        likesLabel.textColor = .white
+        
+        let halfMoonImage = UIImageView()
+        halfMoonImage.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        halfMoonImage.image = #imageLiteral(resourceName: "half_moon")
         
         let heavyLabelTwoB = UILabel()
-        heavyLabelTwoB.text = "Surf the web for courses"
+        heavyLabelTwoB.text = "Popularity"
         heavyLabelTwoB.font = .systemFont(ofSize: 12, weight: .regular)
         heavyLabelTwoB.textColor = .white
         
-        let horizontalStackViewOne = UIStackView(arrangedSubviews: [heavyLabelOne, buttonOne])
+        let horizontalStackViewOne = UIStackView(arrangedSubviews: [titleLabel, likeButton])
+        horizontalStackViewOne.distribution = .equalSpacing
         
-        let horizontalStackViewTwoA = UIStackView(arrangedSubviews: [imageViewTwoA, heavyLabelTwoA])
+        let horizontalStackViewTwoA = UIStackView(arrangedSubviews: [likesImage, likesLabel])
         
-        let horizontalStackViewTwoB = UIStackView(arrangedSubviews: [imageViewTwoB, heavyLabelTwoB])
+        let horizontalStackViewTwoB = UIStackView(arrangedSubviews: [halfMoonImage, heavyLabelTwoB])
         
         let horizontalStackViewTwo = UIStackView(arrangedSubviews: [horizontalStackViewTwoA, horizontalStackViewTwoB])
         horizontalStackViewTwo.axis = .horizontal
@@ -86,8 +98,12 @@ class HeaderView: UICollectionReusableView {
         verticalStackView.anchor(top: nil, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 0, left: 16, bottom: -16, right: -16))
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    // MARK: - Public Methods
+    func setupMovie(movie: Movie) {
+        titleLabel.text = movie.title
         
+        let url = URL(string: "https://image.tmdb.org/t/p/w500/\(movie.posterPath)")
+        imageView.kf.setImage(with: url)
+
+    }
 }

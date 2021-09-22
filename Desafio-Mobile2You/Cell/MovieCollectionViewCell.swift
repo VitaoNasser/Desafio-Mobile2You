@@ -9,6 +9,12 @@ import UIKit
 
 class MovieCollectionViewCell: UICollectionViewCell {
     
+    //MARK: - Properties
+    let titleLable = UILabel()
+    let descriptionLable = UILabel()
+    let posterImage = UIImageView()
+    
+    //MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
         //Custom code for layout
@@ -18,51 +24,50 @@ class MovieCollectionViewCell: UICollectionViewCell {
         setupCellLayer()
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    //MARK: - Private Methods
     fileprivate func setupCellLayer() {
         
-        let cellLayer = CAGradientLayer()
-        cellLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
-        cellLayer.locations = [0.5, 1]
+//        let cellLayer = CAGradientLayer()
+//        cellLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+//        cellLayer.locations = [0.5, 1]
         
         let cellContainerView = UIView()
         addSubview(cellContainerView)
         cellContainerView.anchor(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor)
-        cellContainerView.layer.addSublayer(cellLayer)
+//        cellContainerView.layer.addSublayer(cellLayer)
         
         // static frame
-        cellLayer.frame = self.bounds
-        cellLayer.frame.origin.y -= bounds.height
+//        cellLayer.frame = self.bounds
+//        cellLayer.frame.origin.y -= bounds.height
         
-        let cellImageViewOne = UIImageView()
-        cellImageViewOne.widthAnchor.constraint(equalToConstant: 20).isActive = true
-        cellImageViewOne.backgroundColor = .yellow
+        titleLable.font = .systemFont(ofSize: 16, weight: .heavy)
+        titleLable.textColor = .white
         
-        let descriptionLabelA = UILabel()
-        descriptionLabelA.text = "Surf the web for courses"
-        descriptionLabelA.font = .systemFont(ofSize: 16, weight: .heavy)
-        descriptionLabelA.textColor = .white
-        
-        let descriptionLabelB = UILabel()
-        descriptionLabelB.text = "Surf the web for courses"
-        descriptionLabelB.font = .systemFont(ofSize: 12, weight: .heavy)
-        descriptionLabelB.textColor = .white
+        descriptionLable.font = .systemFont(ofSize: 12, weight: .heavy)
+        descriptionLable.textColor = .white
     
-        let cellImageViewTwo = UIImageView()
-        cellImageViewTwo.backgroundColor = .systemPink
-        cellImageViewTwo.widthAnchor.constraint(equalToConstant: 20).isActive = true
+//        let check = UIImageView()
+//        check.image = #imageLiteral(resourceName: "check")
+//        posterImage.widthAnchor.constraint(equalToConstant: -20).isActive = true
         
-        let verticalStackViewTwo = UIStackView(arrangedSubviews: [descriptionLabelA, descriptionLabelB])
+        let verticalStackViewTwo = UIStackView(arrangedSubviews: [titleLable, descriptionLable])
         verticalStackViewTwo.spacing = 8
         verticalStackViewTwo.axis = .vertical
         
         addSubview(verticalStackViewTwo)
         
         verticalStackViewTwo.anchor(top: nil, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 0, left: 16, bottom: -16, right: -16))
-
-        let horizontalStackView = UIStackView(arrangedSubviews: [cellImageViewOne, verticalStackViewTwo, cellImageViewTwo])
+        
+        posterImage.contentMode = .scaleAspectFit
+        let horizontalStackView = UIStackView(arrangedSubviews: [posterImage, verticalStackViewTwo/*, check*/])
+        horizontalStackView.distribution = .fill
         horizontalStackView.axis = .horizontal
         horizontalStackView.spacing = 8
-        horizontalStackView.distribution = .fillProportionally
+        
         
         addSubview(horizontalStackView)
         
@@ -70,8 +75,15 @@ class MovieCollectionViewCell: UICollectionViewCell {
         
     }
             
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    // MARK: - Public Methods
+    func setupSimilarMovies(movie: Movie) {
+        titleLable.text = movie.title
+        descriptionLable.text = movie.releaseDate
+        
+        let url = URL(string: "https://image.tmdb.org/t/p/w500/\(movie.posterPath)")
+        posterImage.kf.setImage(with: url)
+        posterImage.widthAnchor.constraint(equalToConstant: 20).isActive = true
+
     }
     
 }

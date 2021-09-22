@@ -1,5 +1,5 @@
 //
-//  StretchyHeaderController.swift
+//  MovieViewController.swift
 //  Desafio-Mobile2You
 //
 //  Created by Rodrigo Dias on 16/09/21.
@@ -11,13 +11,35 @@ fileprivate let cellId = "cellId"
 fileprivate let headerId = "headerId"
 fileprivate let padding: CGFloat = 16
 
-class StretchyHeaderController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class MovieViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
+    let service = MovieService()
+    
+    var movie: Movie?
+    var similarMovies: [Movie]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        fetchMovie()
+        fetchSimilarMovie()
+        
         setupCollectionViewLayout()
         setupCollectionView()
+    }
+    
+    func fetchMovie() {
+        service.fetchMovieDetails(id: "680") { (movie) in
+            self.movie = movie
+            self.collectionView.reloadData()
+        }
+    }
+    
+    func fetchSimilarMovie() {
+        service.fetchSimilarMovies(id: "680") { (movies) in
+            self.similarMovies = movies
+            self.collectionView.reloadData()
+        }
     }
     
     fileprivate func setupCollectionViewLayout() {
@@ -40,7 +62,10 @@ class StretchyHeaderController: UICollectionViewController, UICollectionViewDele
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath)
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! HeaderView
+        if let movie = movie {
+            header.setupMovie(movie: movie)
+        }
         return header
     }
     
@@ -49,12 +74,14 @@ class StretchyHeaderController: UICollectionViewController, UICollectionViewDele
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 18
+        return similarMovies?.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MovieCollectionViewCell
-//        cell.backgroundColor = .black
+        if let movie = similarMovies?[indexPath.row] {
+            cell.setupSimilarMovies(movie: movie)
+        }
         return cell
     }
     

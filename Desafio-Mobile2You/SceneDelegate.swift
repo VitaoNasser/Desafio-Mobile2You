@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = StretchyHeaderController(collectionViewLayout: StretchyHeaderLayout())
+        window?.rootViewController = MovieViewController(collectionViewLayout: StretchyHeaderLayout())
         window?.makeKeyAndVisible()
     }
 
