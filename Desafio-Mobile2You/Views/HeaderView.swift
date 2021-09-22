@@ -65,9 +65,6 @@ class HeaderView: UICollectionReusableView {
         likesImage.widthAnchor.constraint(equalToConstant: 20).isActive = true
         likesImage.image = #imageLiteral(resourceName: "small_like")
         
-        
-        let likesLabel = UILabel()
-        likesLabel.text = "Likes"
         likesLabel.font = .systemFont(ofSize: 12, weight: .regular)
         likesLabel.textColor = .white
         
@@ -101,7 +98,9 @@ class HeaderView: UICollectionReusableView {
     // MARK: - Public Methods
     func setupMovie(movie: Movie) {
         titleLabel.text = movie.title
-        popularityLabel.text = String(format: "%@ Views", movie.voteCount.formatToK())
+        popularityLabel.text = String(format: " %.2fk Views", movie.popularity)
+        likesLabel.text = String(format: " %@ Likes", movie.voteCount.formatToK())
+        print(movie.popularity)
         
         let url = URL(string: "https://image.tmdb.org/t/p/w500/\(movie.posterPath)")
         imageView.kf.setImage(with: url)

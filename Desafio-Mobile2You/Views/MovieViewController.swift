@@ -86,7 +86,7 @@ class MovieViewController: UICollectionViewController, UICollectionViewDelegateF
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width - 2 * padding, height: 50)
+        return .init(width: view.frame.width - 2 * padding, height: 80)
     }
     
 }

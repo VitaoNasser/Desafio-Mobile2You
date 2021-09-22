@@ -38,10 +38,10 @@ class MovieCollectionViewCell: UICollectionViewCell {
         
         // static framet
         
-        titleLable.font = .systemFont(ofSize: 16, weight: .heavy)
+        titleLable.font = .systemFont(ofSize: 16, weight: .regular)
         titleLable.textColor = .white
         
-        descriptionLable.font = .systemFont(ofSize: 12, weight: .heavy)
+        descriptionLable.font = .systemFont(ofSize: 12, weight: .regular)
         descriptionLable.textColor = .white
     
 //        let check = UIImageView()
@@ -49,23 +49,21 @@ class MovieCollectionViewCell: UICollectionViewCell {
 //        posterImage.widthAnchor.constraint(equalToConstant: -20).isActive = true
         
         let verticalStackViewTwo = UIStackView(arrangedSubviews: [titleLable, descriptionLable])
-        verticalStackViewTwo.spacing = 8
         verticalStackViewTwo.axis = .vertical
         
         addSubview(verticalStackViewTwo)
         
-        verticalStackViewTwo.anchor(top: nil, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 0, left: 16, bottom: -16, right: -16))
+        verticalStackViewTwo.anchor(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 0, left: 16, bottom: -16, right: 16))
         
-        posterImage.contentMode = .scaleAspectFit
+        posterImage.contentMode = .scaleAspectFill
         let horizontalStackView = UIStackView(arrangedSubviews: [posterImage, verticalStackViewTwo/*, check*/])
         horizontalStackView.distribution = .fill
         horizontalStackView.axis = .horizontal
         horizontalStackView.spacing = 8
         
-        
         addSubview(horizontalStackView)
         
-        horizontalStackView.anchor(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 0, left: 16, bottom: -16, right: -16))
+        horizontalStackView.anchor(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 0, left: 0, bottom: -40, right: 0))
         
     }
             
@@ -76,7 +74,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
         
         let url = URL(string: "https://image.tmdb.org/t/p/w500/\(movie.posterPath)")
         posterImage.kf.setImage(with: url)
-        posterImage.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        posterImage.widthAnchor.constraint(equalToConstant: 48).isActive = true
 
     }
     
