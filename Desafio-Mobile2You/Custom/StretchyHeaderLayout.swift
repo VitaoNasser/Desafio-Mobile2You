@@ -13,7 +13,6 @@ class StretchyHeaderLayout: UICollectionViewFlowLayout {
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         
         let layoutAttributes = super.layoutAttributesForElements(in: rect)
-        
         layoutAttributes?.forEach({ (attributes) in
             
             if attributes.representedElementKind == UICollectionView.elementKindSectionHeader &&
@@ -22,14 +21,13 @@ class StretchyHeaderLayout: UICollectionViewFlowLayout {
                 guard let collectionView = collectionView else { return }
                 
                 let contentOffSetY = collectionView.contentOffset.y
-                print(contentOffSetY)
+//                print(contentOffSetY)
                 
                 if contentOffSetY > 0 {
                     return
                 }
                 
                 let width = collectionView.frame.width
-                
                 let height = attributes.frame.height - contentOffSetY
                 
                 //header
@@ -37,7 +35,6 @@ class StretchyHeaderLayout: UICollectionViewFlowLayout {
             }
             
         })
-        
         return layoutAttributes
     }
     

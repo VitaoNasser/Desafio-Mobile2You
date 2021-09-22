@@ -77,6 +77,8 @@
 		03683D8526F183420042F55E /* Desafio-Mobile2You */ = {
 			isa = PBXGroup;
 			children = (
+				03683E1D26FBB3AD0042F55E /* Extensions */,
+				03683E1C26FBB3720042F55E /* Views */,
 				03683DFB26FAB0FA0042F55E /* Models */,
 				03683DF426FA9A500042F55E /* Network */,
 				03683DBD26F6C6F50042F55E /* Cell */,
@@ -86,9 +88,6 @@
 				03683D8F26F183430042F55E /* Assets.xcassets */,
 				03683D9126F183430042F55E /* LaunchScreen.storyboard */,
 				03683D9426F183430042F55E /* Info.plist */,
-				03683D9E26F2EFA50042F55E /* MovieViewController.swift */,
-				03683DA526F389C30042F55E /* HeaderView.swift */,
-				03683DA826F3B3900042F55E /* Extensions+UIView.swift */,
 			);
 			path = "Desafio-Mobile2You";
 			sourceTree = "<group>";
@@ -133,6 +132,23 @@
 				03683E0526FAC56D0042F55E /* SimilarMovies.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		03683E1C26FBB3720042F55E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				03683DA526F389C30042F55E /* HeaderView.swift */,
+				03683D9E26F2EFA50042F55E /* MovieViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		03683E1D26FBB3AD0042F55E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				03683DA826F3B3900042F55E /* Extensions+UIView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8FF2835C9528A0139C720B7C /* Frameworks */ = {

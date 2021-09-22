@@ -31,18 +31,12 @@ class MovieCollectionViewCell: UICollectionViewCell {
     //MARK: - Private Methods
     fileprivate func setupCellLayer() {
         
-//        let cellLayer = CAGradientLayer()
-//        cellLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
-//        cellLayer.locations = [0.5, 1]
-        
         let cellContainerView = UIView()
         addSubview(cellContainerView)
         cellContainerView.anchor(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor)
 //        cellContainerView.layer.addSublayer(cellLayer)
         
-        // static frame
-//        cellLayer.frame = self.bounds
-//        cellLayer.frame.origin.y -= bounds.height
+        // static framet
         
         titleLable.font = .systemFont(ofSize: 16, weight: .heavy)
         titleLable.textColor = .white
