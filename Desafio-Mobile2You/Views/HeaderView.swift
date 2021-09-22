@@ -12,6 +12,8 @@ class HeaderView: UICollectionReusableView {
     
     // MARK: - Properties
     let titleLabel = UILabel()
+    let popularityLabel = UILabel()
+    let likesLabel = UILabel()
     
     let imageView: UIImageView = {
         let iv = UIImageView()
@@ -73,17 +75,15 @@ class HeaderView: UICollectionReusableView {
         halfMoonImage.widthAnchor.constraint(equalToConstant: 20).isActive = true
         halfMoonImage.image = #imageLiteral(resourceName: "half_moon")
         
-        let heavyLabelTwoB = UILabel()
-        heavyLabelTwoB.text = "Popularity"
-        heavyLabelTwoB.font = .systemFont(ofSize: 12, weight: .regular)
-        heavyLabelTwoB.textColor = .white
+        popularityLabel.font = .systemFont(ofSize: 12, weight: .regular)
+        popularityLabel.textColor = .white
         
         let horizontalStackViewOne = UIStackView(arrangedSubviews: [titleLabel, likeButton])
         horizontalStackViewOne.distribution = .equalSpacing
         
         let horizontalStackViewTwoA = UIStackView(arrangedSubviews: [likesImage, likesLabel])
         
-        let horizontalStackViewTwoB = UIStackView(arrangedSubviews: [halfMoonImage, heavyLabelTwoB])
+        let horizontalStackViewTwoB = UIStackView(arrangedSubviews: [halfMoonImage, popularityLabel])
         
         let horizontalStackViewTwo = UIStackView(arrangedSubviews: [horizontalStackViewTwoA, horizontalStackViewTwoB])
         horizontalStackViewTwo.axis = .horizontal
@@ -101,9 +101,11 @@ class HeaderView: UICollectionReusableView {
     // MARK: - Public Methods
     func setupMovie(movie: Movie) {
         titleLabel.text = movie.title
+        popularityLabel.text = String(format: "%@ Views", movie.voteCount.formatToK())
         
         let url = URL(string: "https://image.tmdb.org/t/p/w500/\(movie.posterPath)")
         imageView.kf.setImage(with: url)
 
     }
 }
+

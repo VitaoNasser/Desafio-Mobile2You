@@ -72,3 +72,11 @@ extension UIView {
     }
     
 }
+
+// To format likes and popularity views with "000.0k"
+extension Int {
+    func formatToK() -> String {
+        let num = self > 1000 ? Double(self)/1000.0 : Double(self)
+        return String(format: self >= 1000 ? "%.1fk": "%.0f", num)
+    }
+}
