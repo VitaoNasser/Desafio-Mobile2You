@@ -86,6 +86,7 @@ class HeaderView: UICollectionReusableView {
         horizontalStackViewTwo.axis = .horizontal
         horizontalStackViewTwo.distribution = .fillProportionally
 
+
         let verticalStackView = UIStackView(arrangedSubviews: [horizontalStackViewOne, horizontalStackViewTwo])
         verticalStackView.axis = .vertical
         verticalStackView.spacing = 8
